@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { getCityWeather } from "../../services/api";
 
 import InputText from "../InputText/InputText";
 import HorizontalLine from "../HorizontalLine/HorizontalLine";
 import CardDetail from "../CardDetail/CardDetail";
 
 export default function Main() {
+  const onSearch = cityName => {
+    getCityWeather(cityName)
+      .then(data => console.log("data", data))
+      .catch(error => console.log(error));
+  };
+
   return (
     <div className="main-container">
       <div className="main-div">
         <div className="main-search">
           <label className="main-lbl">Previsão do Tempo</label>
-          <CardDetail />
-          <InputText />
+
+          {/* <div>
+            <CardDetail />
+          </div> */}
+
+          <InputText onSearch={searchValue => onSearch(searchValue)} />
         </div>
 
         <div className="main-hr">
