@@ -1,0 +1,32 @@
+.cd-container {
+  width: 100%;
+  background-color: #fff3e4;
+  padding: 1rem 3rem 1rem 3rem;
+}
+
+.cd-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cd-top-label {
+  font-weight: bold;
+  color: #505050;
+}
+
+.cd-main-label {
+  font-weight: bold;
+  color: #505050;
+  font-size: 45px;
+}
+
+.cd-bold {
+  font-weight: bold;
+  color: #505050;
+}
+
+.cd-orange-bold {
+  font-weight: bold;
+  color: #ff8409;
+}

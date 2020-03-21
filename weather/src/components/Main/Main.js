@@ -1,8 +1,10 @@
 import React from "react";
 import "./Main.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import InputText from "../InputText/InputText";
 import HorizontalLine from "../HorizontalLine/HorizontalLine";
+import CardDetail from "../CardDetail/CardDetail";
 
 export default function Main() {
   return (
@@ -10,6 +12,7 @@ export default function Main() {
       <div className="main-div">
         <div className="main-search">
           <label className="main-lbl">Previsão do Tempo</label>
+          <CardDetail />
           <InputText />
         </div>
 
@@ -17,56 +20,56 @@ export default function Main() {
           <HorizontalLine />
         </div>
 
-        <div>
+        <div className="pt-5 pl-5">
           <label className="main-lbl-1">Capitais</label>
 
-          <div className="row">
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
+          <div className="row mb-3">
+            <div className="col-sm-1">Min</div>
+            <div className="col-sm-1">Máx</div>
+            <div className="col-sm-4"></div>
+            <div className="col-sm-1">Min</div>
+            <div className="col-sm-1">Máx</div>
+            <div className="col-sm-4"></div>
+          </div>
+          <div className="row mb-3">
+            <div className="col-sm-1 main-bold">18°</div>
+            <div className="col-sm-1 main-bold">27°</div>
+            <div className="col-sm-4 main-bold">Rio de Janeiro</div>
+            <div className="col-sm-1 main-bold">23°</div>
+            <div className="col-sm-1 main-bold">37°</div>
+            <div className="col-sm-4 main-bold">Salvador</div>
+          </div>
+          <div className="row mb-3">
+            <div className="col-sm-1 main-bold">14°</div>
+            <div className="col-sm-1 main-bold">22°</div>
+            <div className="col-sm-4 main-bold">São Paulo</div>
+            <div className="col-sm-1 main-bold">5°</div>
+            <div className="col-sm-1 main-bold">14°</div>
+            <div className="col-sm-4 main-bold">Curitiba</div>
+          </div>
+          <div className="row mb-3">
+            <div className="col-sm-1 main-bold">21°</div>
+            <div className="col-sm-1 main-bold">32°</div>
+            <div className="col-sm-4 main-bold">Belo Horizonte</div>
+            <div className="col-sm-1 main-bold">21°</div>
+            <div className="col-sm-1 main-bold">32°</div>
+            <div className="col-sm-4 main-bold">Fortaleza</div>
+          </div>
+          <div className="row mb-3">
+            <div className="col-sm-1 main-bold">24°</div>
+            <div className="col-sm-1 main-bold">37°</div>
+            <div className="col-sm-4 main-bold">Brasília</div>
+            <div className="col-sm-1 main-bold">21°</div>
+            <div className="col-sm-1 main-bold">32°</div>
+            <div className="col-sm-4 main-bold">Manaus</div>
           </div>
           <div className="row">
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-          </div>
-          <div className="row">
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-          </div>
-          <div className="row">
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-          </div>
-          <div className="row">
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-          </div>
-          <div className="row">
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
-            <div className="col"></div>
+            <div className="col-sm-1 main-bold">24°</div>
+            <div className="col-sm-1 main-bold">37°</div>
+            <div className="col-sm-4 main-bold">Belém</div>
+            <div className="col-sm-1 main-bold">28°</div>
+            <div className="col-sm-1 main-bold">40°</div>
+            <div className="col-sm-4 main-bold">João Pessoa</div>
           </div>
         </div>
       </div>

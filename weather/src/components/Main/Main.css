@@ -19,7 +19,7 @@
   color: white;
   font-size: 50px;
   font-weight: bold;
-  margin-top: 6rem;
+  margin-top: 2rem;
   margin-bottom: 6rem;
 }
 
@@ -31,4 +31,9 @@
 
 .main-hr {
   margin-top: 5rem;
+}
+
+.main-bold {
+  font-weight: bold;
+  font-size: 18px;
 }
