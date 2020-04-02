@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import _ from "lodash";
 import Loader from "react-loader-spinner";
 import { getCityWeather } from "../../services/api";
 
@@ -20,12 +21,13 @@ export default function Main() {
   const [MN, setMN] = useState({});
   const [JP, setJP] = useState({});
 
+  const [weatherCity, setWeatherCity] = useState({});
   const [loading, setLoading] = useState(false);
 
   const onSearch = async cityName => {
     try {
       const response = await getCityWeather(cityName);
-      console.log(response.data);
+      setWeatherCity(response.data);
     } catch (error) {
       console.log("onSearch error", error);
     }
@@ -115,6 +117,10 @@ export default function Main() {
     }
   };
 
+  const round = number => {
+    return Math.round(number);
+  };
+
   return (
     <div className="main-container">
       {loading ? (
@@ -132,9 +138,14 @@ export default function Main() {
           <div className="main-search">
             <label className="main-lbl">Previsão do Tempo</label>
 
-            {/* <div>
-            <CardDetail />
-          </div> */}
+            {_.size(weatherCity) > 0 && (
+              <div>
+                <CardDetail
+                  data={weatherCity}
+                  onClose={() => setWeatherCity({})}
+                />
+              </div>
+            )}
 
             <InputText onSearch={searchValue => onSearch(searchValue)} />
           </div>
@@ -155,43 +166,43 @@ export default function Main() {
               <div className="col-sm-4"></div>
             </div>
             <div className="row mb-3">
-              <div className="col-sm-1 main-bold">{RJ.min}°</div>
-              <div className="col-sm-1 main-bold">{RJ.max}°</div>
+              <div className="col-sm-1 main-bold">{round(RJ.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(RJ.max)}°</div>
               <div className="col-sm-4 main-bold">Rio de Janeiro</div>
-              <div className="col-sm-1 main-bold">{SV.min}°</div>
-              <div className="col-sm-1 main-bold">{SV.max}°</div>
+              <div className="col-sm-1 main-bold">{round(SV.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(SV.max)}°</div>
               <div className="col-sm-4 main-bold">Salvador</div>
             </div>
             <div className="row mb-3">
-              <div className="col-sm-1 main-bold">{SP.min}°</div>
-              <div className="col-sm-1 main-bold">{SP.max}°</div>
+              <div className="col-sm-1 main-bold">{round(SP.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(SP.max)}°</div>
               <div className="col-sm-4 main-bold">São Paulo</div>
-              <div className="col-sm-1 main-bold">{CR.min}°</div>
-              <div className="col-sm-1 main-bold">{CR.max}°</div>
+              <div className="col-sm-1 main-bold">{round(CR.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(CR.max)}°</div>
               <div className="col-sm-4 main-bold">Curitiba</div>
             </div>
             <div className="row mb-3">
-              <div className="col-sm-1 main-bold">{BH.min}°</div>
-              <div className="col-sm-1 main-bold">{BH.max}°</div>
+              <div className="col-sm-1 main-bold">{round(BH.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(BH.max)}°</div>
               <div className="col-sm-4 main-bold">Belo Horizonte</div>
-              <div className="col-sm-1 main-bold">{FL.min}°</div>
-              <div className="col-sm-1 main-bold">{FL.max}°</div>
+              <div className="col-sm-1 main-bold">{round(FL.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(FL.max)}°</div>
               <div className="col-sm-4 main-bold">Fortaleza</div>
             </div>
             <div className="row mb-3">
-              <div className="col-sm-1 main-bold">{DF.min}°</div>
-              <div className="col-sm-1 main-bold">{DF.max}°</div>
+              <div className="col-sm-1 main-bold">{round(DF.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(DF.max)}°</div>
               <div className="col-sm-4 main-bold">Brasília</div>
-              <div className="col-sm-1 main-bold">{MN.min}°</div>
-              <div className="col-sm-1 main-bold">{MN.max}°</div>
+              <div className="col-sm-1 main-bold">{round(MN.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(MN.max)}°</div>
               <div className="col-sm-4 main-bold">Manaus</div>
             </div>
             <div className="row">
-              <div className="col-sm-1 main-bold">{BL.min}°</div>
-              <div className="col-sm-1 main-bold">{BL.min}°</div>
+              <div className="col-sm-1 main-bold">{round(BL.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(BL.max)}°</div>
               <div className="col-sm-4 main-bold">Belém</div>
-              <div className="col-sm-1 main-bold">{JP.min}°</div>
-              <div className="col-sm-1 main-bold">{JP.max}°</div>
+              <div className="col-sm-1 main-bold">{round(JP.min)}°</div>
+              <div className="col-sm-1 main-bold">{round(JP.max)}°</div>
               <div className="col-sm-4 main-bold">João Pessoa</div>
             </div>
           </div>

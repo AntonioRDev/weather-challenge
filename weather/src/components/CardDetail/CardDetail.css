@@ -18,7 +18,15 @@
 .cd-main-label {
   font-weight: bold;
   color: #505050;
-  font-size: 45px;
+  font-size: 30px;
+}
+
+.cd-weather {
+  padding-top: 6px;
+  padding-left: 20px;
+  text-align: left;
+  line-height: 1;
+  max-width: 230px;
 }
 
 .cd-bold {
