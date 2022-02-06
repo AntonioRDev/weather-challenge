@@ -1,28 +1,24 @@
 import React, { useState } from "react";
-import "./InputText.css";
-
-import Search from "../../icons/search.svg";
+import { VscSearch } from "react-icons/vsc";
 
 export default function InputText({ onSearch }) {
   const [searchValue, setSearchValue] = useState("");
 
   return (
-    <div className="input-container">
+    <div className="relative">
       <input
-        className="input-text"
+        className="h-12 w-96 pl-5 text-xl"
         type="text"
         value={searchValue}
-        onChange={e => setSearchValue(e.target.value)}
+        onChange={(e) => setSearchValue(e.target.value)}
         placeholder="Insira aqui o nome da cidade"
       />
-      <img
-        id="search"
-        className="input-img cursor-pointer"
-        src={Search}
-        alt="Search Icon"
-        height={34}
+      <div
+        className="absolute top-4 right-5 cursor-pointer"
         onClick={() => onSearch(searchValue)}
-      />
+      >
+        <VscSearch />
+      </div>
     </div>
   );
 }
