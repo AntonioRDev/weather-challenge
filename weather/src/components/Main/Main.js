@@ -120,7 +120,7 @@ export default function Main() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center bg-gradient-to-b from-orange-400 to-yellow-400">
+    <div className="min-h-screen flex justify-center bg-gradient-to-b from-orange-500 to-yellow-400">
       {loading ? (
         <div className="flex items-center">
           <Loader
@@ -136,7 +136,7 @@ export default function Main() {
             <label className="text-white text-5xl font-bold mt-8 mb-20">Previsão do Tempo</label>
 
             {_.size(weatherCity) > 0 && (
-              <div>
+              <div className="mb-5">
                 <CardDetail
                   data={weatherCity}
                   onClose={() => setWeatherCity({})}
@@ -147,84 +147,84 @@ export default function Main() {
             <InputText onSearch={searchValue => onSearch(searchValue)} />
           </div>
 
-          <div className="mt-20">
+          <div className="mt-16">
             <HorizontalLine />
           </div>
 
           <div className="pt-5">
             <label className="text-white text-4xl font-bold mb-6">Capitais</label>
 
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 gap-x-12 mt-3">
               <div className="col1">
-                <div className="flex">
-                  <div>Min</div>
+                <div className="flex mb-2">
+                  <div className="mr-3">Min</div>
                   <div>Máx</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(RJ.min)}°</div>
-                  <div className="font-bold text-lg">{round(RJ.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(RJ.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(RJ.max)}°</div>
                   <div className="font-bold text-lg">Rio de Janeiro</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(SP.min)}°</div>
-                  <div className="font-bold text-lg">{round(SP.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(SP.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(SP.max)}°</div>
                   <div className="font-bold text-lg">São Paulo</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(BH.min)}°</div>
-                  <div className="font-bold text-lg">{round(BH.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(BH.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(BH.max)}°</div>
                   <div className="font-bold text-lg">Belo Horizonte</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(DF.min)}°</div>
-                  <div className="font-bold text-lg">{round(DF.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(DF.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(DF.max)}°</div>
                   <div className="font-bold text-lg">Brasília</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(BL.min)}°</div>
-                  <div className="font-bold text-lg">{round(BL.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(BL.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(BL.max)}°</div>
                   <div className="font-bold text-lg">Belém</div>
                 </div>
               </div>
 
               <div className="col2">
-                <div className="flex">
-                  <div>Min</div>
+                <div className="flex mb-2">
+                  <div className="mr-3">Min</div>
                   <div>Máx</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(SV.min)}°</div>
-                  <div className="font-bold text-lg">{round(SV.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(SV.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(SV.max)}°</div>
                   <div className="font-bold text-lg">Salvador</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(CR.min)}°</div>
-                  <div className="font-bold text-lg">{round(CR.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(CR.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(CR.max)}°</div>
                   <div className="font-bold text-lg">Curitiba</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(FL.min)}°</div>
-                  <div className="font-bold text-lg">{round(FL.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(FL.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(FL.max)}°</div>
                   <div className="font-bold text-lg">Fortaleza</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(MN.min)}°</div>
-                  <div className="font-bold text-lg">{round(MN.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(MN.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(MN.max)}°</div>
                   <div className="font-bold text-lg">Manaus</div>
                 </div>
 
-                <div className="flex">
-                  <div className="font-bold text-lg">{round(JP.min)}°</div>
-                  <div className="font-bold text-lg">{round(JP.max)}°</div>
+                <div className="flex mb-2">
+                  <div className="font-bold text-lg mr-3">{round(JP.min)}°</div>
+                  <div className="font-bold text-lg mr-3">{round(JP.max)}°</div>
                   <div className="font-bold text-lg">João Pessoa</div>
                 </div>
               </div>
